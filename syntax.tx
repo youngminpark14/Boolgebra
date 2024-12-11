@@ -1,0 +1,29 @@
+Program:
+    commands*=Command
+;
+
+Command:
+    AssignmentCommand | SimplifyCommand | CompareCommand | TruthTableCommand 
+
+;
+
+AssignmentCommand:
+    'let' var=ID '=' expr+=Expression['+']
+;
+
+SimplifyCommand:
+    'simplify' var=ID
+;
+
+CompareCommand:
+    'compare' var1=ID 'to' var2=ID
+;
+
+TruthTableCommand:
+    'truthtable' var=ID 
+    
+;
+
+Expression:
+    term=/[a-zA-Z"'"]+/
+;
