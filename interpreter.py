@@ -1,3 +1,4 @@
+import sys
 import re
 from textx import metamodel_from_file
 from sympy import symbols
@@ -6,8 +7,16 @@ from itertools import product
 
 
 boolgebra_mm = metamodel_from_file('syntax.tx')
-boolgebra_model = boolgebra_mm.model_from_file('text.boolgebra')
 
+if len(sys.argv) < 2:
+    print("Error: No .boolgebra file provided. Usage: python3 interpreter.py <filename.boolgebra>")
+    sys.exit(1)
+if sys.argv[1].split(".")[-1] != "boolgebra":
+    print("Error: File provided is not a .boolgebra file. Usage: python3 interpreter.py <filename.boolgebra>")
+    sys.exit(1)
+
+filename = sys.argv[1]
+boolgebra_model = boolgebra_mm.model_from_file(filename)
 variables = {}
 
 def parseLiteral(stringLiteral):
