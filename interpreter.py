@@ -91,7 +91,7 @@ def expressionAsString(simplifiedExpr):
 def simplifyString(expression):
     expressionList = parseExpression(expression)
     sympy_expr = sympyExpression(expressionList)
-    simplified_expr = simplify_logic(sympy_expr, force=True, form='dnf')
+    simplified_expr = simplify_logic(sympy_expr, form='dnf')
     return expressionAsString(simplified_expr)
 
 def print_truth_table(sympy_expr):
