@@ -9,7 +9,7 @@ It's not always easy to get the correct simplified boolean expression. This proj
 ## example.boolgebra
 
     let expr = A + A'
-    simplify exxpr
+    simplify expr
 
     Output:
     expr = A + A'
