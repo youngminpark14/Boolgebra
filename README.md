@@ -11,6 +11,10 @@ It's not always easy to get the correct simplified boolean expression. This proj
     let expr = A + A'
     simplify exxpr
 
+    Output:
+    expr = A + A'
+    simplified expr: 1
+    
 ## Brief Overview of Functions
 
     'let' (ASSIGNMENT)
